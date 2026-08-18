@@ -38,10 +38,10 @@ int main() {
     printf("In use: %s\n", dupDstStr1);    // normal output
 
     free(dupDstStr1);
-    printf("Free: %s\n", dupDstStr1);     // garbage data, results in heap-use-after-free when run in debug mode
+    // printf("Free: %s\n", dupDstStr1);     // garbage data, results in heap-use-after-free when run in debug mode
 
-    dupDstStr1 = NULL;
-    printf("Null: %s\n", dupDstStr1);     // segfault 
+    // dupDstStr1 = NULL;
+    // printf("Null: %s\n", dupDstStr1);     // segfault 
 
 
     printf("\nSTRING CONCAT:\n");
@@ -55,6 +55,7 @@ int main() {
     printf("%s", buff);
     printf("%s", strcat3);
 
+    free(strcat3);
 
     printf("\nSTRING COMPARE:\n");
     char *strcmp1 = "match"; 
@@ -77,5 +78,13 @@ int main() {
     
     printf("%s - ", phistrchr(strchr1, chr2));
     printf("%p\n", phistrchr(strchr1, chr2));
+
+
+    printf("\nSUBSTRING LOCATE:\n");
+    char *bigstr = "one hundred";
+    char *substr = "un"; 
+
+    printf("%s - ", phistrstr(bigstr, substr));
+    printf("%p\n", phistrstr(bigstr, substr));
 
 }

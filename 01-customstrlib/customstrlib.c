@@ -99,6 +99,27 @@ char *phistrchr(char *s, char c) {
     else return &s[index];
 }
 
-char *phistrstr(char *str1, char *str2) {
-    
+char *phistrstr(char *str, char *substr) {
+    int startIndex = 0;
+    int len = phistrlen(str);
+    int sublen = phistrlen(substr);
+
+    while (str[startIndex] != '\0' && startIndex < len - sublen) {
+        int match = 1;
+
+        for (int i = 0; i < sublen; i++) {
+            if (str[startIndex + i] != substr[i]) {
+                match = 0;        
+                break;
+            }
+        }
+        
+        if (match == 1) {
+            return &str[startIndex];
+        }
+
+        startIndex++;
+    }
+
+    return NULL;
 }
