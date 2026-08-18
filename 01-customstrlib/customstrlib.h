@@ -12,4 +12,10 @@ char *phistrcat(char *str1, char *str2, char *strdst);
 
 char *phistrcatmalloc(char *str1, char *str2);
 
+int phistrcmp(char *str1, char *str2);
+
+char *phistrchr(char *s, char c);
+
+char *phistrstr(char *str1, char *str2);
+
 #endif

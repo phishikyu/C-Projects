@@ -55,4 +55,27 @@ int main() {
     printf("%s", buff);
     printf("%s", strcat3);
 
+
+    printf("\nSTRING COMPARE:\n");
+    char *strcmp1 = "match"; 
+    char *strcmp2 = "match";
+    
+    char *strcmp3 = "no match";
+    char *strcmp4 = "doesn't match"; 
+
+    printf("%d" "%s", phistrcmp(strcmp1, strcmp2), "\n");
+    printf("%d" "%s", phistrcmp(strcmp3, strcmp4), "\n");
+
+
+    printf("\nSTRING LOCATE:\n");
+    char chr1 = 'a';
+    char chr2 = 'd'; 
+    char *strchr1 = "find me";
+
+    printf("%s - ", phistrchr(strchr1, chr1));
+    printf("%p\n", phistrchr(strchr1, chr1));
+    
+    printf("%s - ", phistrchr(strchr1, chr2));
+    printf("%p\n", phistrchr(strchr1, chr2));
+
 }

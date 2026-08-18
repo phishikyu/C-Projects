@@ -28,7 +28,7 @@ char *phistrcopy(char *dststr, const char *srcstr) {
         currentChar = srcstr[count];
     }
 
-    dststr[count] = srcstr[count];
+    dststr[count] = '\0';
 
     return dststr;
 }
@@ -67,4 +67,38 @@ char *phistrcatmalloc(char *str1, char *str2) {
     phistrcopy(newstr + phistrlen(str1), str2);
 
     return newstr;
+}
+
+int phistrcmp(char *str1, char *str2) {
+    
+    // char currentChar = str1[0];
+    int index = 0;
+
+    while (str1[index] != '\0' && str2[index] != '\0') {
+        if (str1[index] != str2[index]) {
+            return 0;
+        }
+
+        index++;
+    }
+
+    return 1;
+}
+
+char *phistrchr(char *s, char c) {
+    int index = 0;
+
+    while (s[index] != '\0') {
+        if (s[index] == c) {
+            break;
+        }
+        index++;
+    }
+
+    if (s[index] == '\0') return NULL;
+    else return &s[index];
+}
+
+char *phistrstr(char *str1, char *str2) {
+    
 }
