@@ -46,8 +46,13 @@ int main() {
 
     printf("\nSTRING CONCAT:\n");
     char *strcat1 = "Mewo";
-    char *strcat2 = "MewoMewo";
+    char *strcat2 = "MewoMewo\n";
     char buff[256];
     phistrcat(strcat1, strcat2, buff);
+
+    char *strcat3 = phistrcatmalloc(strcat1, strcat2);
+
     printf("%s", buff);
+    printf("%s", strcat3);
+
 }

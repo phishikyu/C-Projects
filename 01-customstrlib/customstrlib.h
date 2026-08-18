@@ -10,4 +10,6 @@ char *phistrdup(char *srcstr);
 
 char *phistrcat(char *str1, char *str2, char *strdst);
 
+char *phistrcatmalloc(char *str1, char *str2);
+
 #endif

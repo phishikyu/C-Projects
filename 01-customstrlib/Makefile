@@ -14,7 +14,7 @@ clean:
 	rm -f $(OUTFILE) && rm -f $(DEBUG_OUTFILE)
 
 run:
-	make test && ./test
+	make all && ./$(OUTFILE)
 
 debug: $(SRC) $(HDR)
 	$(CC) $(CFLAGS) -fsanitize=address $(SRC) -o $(DEBUG_OUTFILE)
