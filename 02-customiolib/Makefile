@@ -1,8 +1,8 @@
 # Variables
 CC = gcc
 CFLAGS = -Wall -Wextra -g
-SRC = main.c customstrlib.c
-HDR = customstrlib.h
+SRC = main.c customiolib.c
+HDR = customiolib.h
 
 OUTFILE = main
 DEBUG_OUTFILE = main_debug

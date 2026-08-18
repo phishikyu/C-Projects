@@ -51,6 +51,7 @@ char *phistrdup(char *srcstr) {
 
 }
 
+// Based on strcat function
 char *phistrcat(char *str1, char *str2, char *strdst) {
     phistrcopy(strdst, str1);
     phistrcopy(strdst + phistrlen(str1), str2);
@@ -58,6 +59,7 @@ char *phistrcat(char *str1, char *str2, char *strdst) {
     return strdst;
 }
 
+// strcat but slightly slower and allocates without needing a buffer
 char *phistrcatmalloc(char *str1, char *str2) {
     int strcatlen = phistrlen(str1) + phistrlen(str2) + 1; 
 
@@ -69,6 +71,7 @@ char *phistrcatmalloc(char *str1, char *str2) {
     return newstr;
 }
 
+// Based on strcmp function
 int phistrcmp(char *str1, char *str2) {
     
     // char currentChar = str1[0];
@@ -85,6 +88,7 @@ int phistrcmp(char *str1, char *str2) {
     return 1;
 }
 
+// Based on strchr function
 char *phistrchr(char *s, char c) {
     int index = 0;
 
@@ -99,6 +103,7 @@ char *phistrchr(char *s, char c) {
     else return &s[index];
 }
 
+// Based on strstr function
 char *phistrstr(char *str, char *substr) {
     int startIndex = 0;
     int len = phistrlen(str);
