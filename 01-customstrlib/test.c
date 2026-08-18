@@ -32,8 +32,8 @@ int main() {
     // assert strcmp here later
 
     
-    printf("STRING DUPLICATE:\n");
-    char dupSrcStr1[] = "Duplicate me!\n";
+    printf("\nSTRING DUPLICATE:\n");
+    char *dupSrcStr1 = "Duplicate me!";
     char *dupDstStr1 = phistrdup(dupSrcStr1);
     printf("In use: %s\n", dupDstStr1);    // normal output
 
@@ -41,6 +41,13 @@ int main() {
     printf("Free: %s\n", dupDstStr1);     // garbage data, results in heap-use-after-free when run in debug mode
 
     dupDstStr1 = NULL;
-    printf("Null: %s\n", dupDstStr1);     // segfault, using 
+    printf("Null: %s\n", dupDstStr1);     // segfault 
 
+
+    printf("\nSTRING CONCAT:\n");
+    char *strcat1 = "Mewo";
+    char *strcat2 = "MewoMewo";
+    char buff[256];
+    phistrcat(strcat1, strcat2, buff);
+    printf("%s", buff);
 }

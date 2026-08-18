@@ -28,6 +28,8 @@ char *phistrcopy(char *dststr, const char *srcstr) {
         currentChar = srcstr[count];
     }
 
+    dststr[count] = srcstr[count];
+
     return dststr;
 }
 
@@ -46,4 +48,23 @@ char *phistrdup(char *srcstr) {
     }
 
     return startAddress;
+
+}
+
+char *phistrcat(char *str1, char *str2, char *strdst) {
+    phistrcopy(strdst, str1);
+    phistrcopy(strdst + phistrlen(str1), str2);
+
+    return strdst;
+}
+
+char *phistrcatmalloc(char *str1, char *str2) {
+    int strcatlen = phistrlen(str1) + phistrlen(str2) + 1; 
+
+    char *newstr = malloc(strcatlen);
+
+    phistrcopy(newstr, str1);
+    phistrcopy(newstr + phistrlen(str1), str2);
+
+    return newstr;
 }

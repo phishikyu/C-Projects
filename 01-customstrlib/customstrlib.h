@@ -8,4 +8,6 @@ char *phistrcopy(char *dststr, const char *srcstr);
 
 char *phistrdup(char *srcstr);
 
+char *phistrcat(char *str1, char *str2, char *strdst);
+
 #endif
